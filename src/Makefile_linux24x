@@ -47,9 +47,9 @@ MODCFLAGS	+= -DLINUX -D__KERNEL__ -DMODULE -O2 -pipe -Wall
 MODCFLAGS	+= -I$(KSRC)/include -I.
 MODCFLAGS	+= -DMODVERSIONS -DEXPORT_SYMTAB -include $(KSRC)/include/linux/modversions.h
 ifeq ($(RTL_IOCTL),y)
-   SOURCE	:= r8169_n.c rtl_ioctl.c
+   SOURCE	:= r8169stock_n.c rtl_ioctl.c
 else
-   SOURCE	:= r8169_n.c
+   SOURCE	:= r8169stock_n.c
 endif
 OBJS		:= $(SOURCE:.c=.o)
 
@@ -66,8 +66,8 @@ ifeq ($(SMP),1)
 endif
 
 modules: $(OBJS)
-	$(LD) -r $^ -o r8169.o
-	strip --strip-debug r8169.o
+	$(LD) -r $^ -o r8169stock.o
+	strip --strip-debug r8169stock.o
 
 %.o: %.c
 	$(CC) $(MODCFLAGS) -c $< -o $@ 
@@ -76,4 +76,4 @@ clean:
 	rm *.o -f
 
 install:
-	install -m 744 -c r8169.o $(KMISC)
+	install -m 744 -c r8169stock.o $(KMISC)

@@ -33,8 +33,8 @@
 ENABLE_S5_KEEP_CURR_MAC = n
 
 ifneq ($(KERNELRELEASE),)
-	obj-m := r8169.o
-	r8169-objs := r8169_n.o
+	obj-m := r8169stock.o
+	r8169-objs := r8169stock_n.o
 	EXTRA_CFLAGS += -DCONFIG_R8169_NAPI
 	EXTRA_CFLAGS += -DCONFIG_R8169_VLAN
 	ifeq ($(ENABLE_S5_KEEP_CURR_MAC), y)
