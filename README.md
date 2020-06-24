@@ -33,7 +33,7 @@ Kernel Modules ---> Network Devices ---> <*> r8169stock
 Firmware ---> < > r8169-firmware
 ````
 8. build the openwrt image as you like  
-###Known issue:  
+### Known issue:  
 Depending on the branch you are using, i.e. v19.07.3, you may get this error while building openwrt:
 ````sh
 gconvert.c:61:2: error: #error GNU libiconv not in use but included iconv.h is from libiconv
