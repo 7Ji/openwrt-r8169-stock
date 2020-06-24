@@ -28,8 +28,18 @@ Kernel Modules ---> Network Devices ---> <*> r8168
 Kernel Modules ---> Network Devices ---> < > r8169
 Kernel Modules ---> Network Devices ---> <*> r8169stock
 ````
-7. **IMPORTANT** uncheck r8169-firmware in Firmware, otherwise the r8169 driver provides by linux kernel will still work, thus generating many problems
+7. **IMPORTANT:** uncheck r8169-firmware in Firmware, otherwise the r8169 driver provides by linux kernel will still work, thus generating many problems
 ````sh
 Firmware ---> < > r8169-firmware
 ````
 8. build the openwrt image as you like
+###Known issue:
+Depending on the branch you are using, i.e. v19.07.3, you may get this error while building openwrt:
+````sh
+gconvert.c:61:2: error: #error GNU libiconv not in use but included iconv.h is from libiconv
+````
+You will need to configure glib with iconv disabled:
+````sh
+cd build_dir/host/pkg-config-*/glib
+./configure --enable-iconv=no --with-libiconv=gnu
+````sh
