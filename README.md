@@ -42,4 +42,4 @@ You will need to configure glib with iconv disabled:
 ````sh
 cd build_dir/host/pkg-config-*/glib  
 ./configure --enable-iconv=no --with-libiconv=gnu
-````sh
+````
