@@ -13,8 +13,8 @@ define KernelPackage/r8169stock
   TITLE:=Stock driver for Realtek r8169 chipsets
   SUBMENU:=Network Devices
   VERSION:=$(LINUX_VERSION)+$(PKG_VERSION)-$(BOARD)-$(PKG_RELEASE)
-  FILES:= $(PKG_BUILD_DIR)/r8169stock.ko
-  AUTOLOAD:=$(call AutoProbe,r8169stock)
+  FILES:= $(PKG_BUILD_DIR)/r8169.ko
+  AUTOLOAD:=$(call AutoProbe,r8169)
   DEFAULT:=y
 endef
 
